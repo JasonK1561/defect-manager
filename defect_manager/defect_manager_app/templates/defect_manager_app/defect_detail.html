@@ -1,0 +1,22 @@
+{% extends 'defect_manager_app/base.html' %}
+{% block content %}
+<h1>Defect:{{ defect.name }}</h1>
+
+<h3>Defect Type: {{defect.defect_type}}</h3>
+<h3>Defect Type: {{defect.defect_status}}</h3>
+<h3>Defect Type: {{defect.severity}}</h3>
+<h3>Defect Type: {{defect.created_date}}</h3>
+<h3>Defect Type: {{defect.notes}}</h3>
+<h3>Defect Type: {{defect.modified_date}}</h3>
+
+<a href="{% url 'defect_manager_app:update_defect' pk=defect.pk %}">Update</a>
+
+{% for comment in defect.comments.all %}
+  <p>{{ comment.author }}   {{ comment.created_date}}:</p>
+  <p>{{ comment.text }}</p>
+  <br>
+{% endfor %}
+
+<!-- <a href="url 'defect_manager_app:add_comment'"></a> -->
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Defect Manager</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{% url 'defect_manager_app:defect_list' %}">Defect Manager</a></li>
+        <li><a>About</a></li>
+        <li><a>Github</a></li>
+        <li><a>LinkedIn</a></li>
+      </ul>
+
+      <ul>
+        <li><a>New Defect</a></li>
+        <li><a>Closed Defects</a></li>
+      </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+
+  </body>
+</html>
