@@ -15,3 +15,16 @@ class DefectForm(forms.ModelForm):
             'defect_type': forms.Select(attrs={'class': 'dropdownclass'}, choices=Defect.DEFECT_TYPE_CHOICES),
             'defect_status': forms.Select(attrs={'class': 'dropdownclass'}, choices=Defect.DEFECT_STATUS_CHOICES),
         }
+
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Comment
+
+        fields = ('author', 'text')
+
+        widgets = {
+            'text': forms.TextInput(attrs={'class': 'textinputclass'})
+        }

@@ -5,11 +5,11 @@ from django.urls import reverse
 # Create your models here.
 class Defect(models.Model):
     ########## DEFECT STATUS ATTRIBUTES ###########
-    DEFECT_STATUS_NEW = 'DN'
-    DEFECT_STATUS_OPEN = 'DO'
-    DEFECT_STATUS_REJECTED = 'DR'
-    DEFECT_STATUS_FIXED = 'DF'
-    DEFECT_STATUS_CLOSE = 'DC'
+    DEFECT_STATUS_NEW = 'New'
+    DEFECT_STATUS_OPEN = 'Open'
+    DEFECT_STATUS_REJECTED = 'Rejected'
+    DEFECT_STATUS_FIXED = 'Fixed'
+    DEFECT_STATUS_CLOSE = 'Closed'
 
     DEFECT_STATUS_CHOICES = [
     (DEFECT_STATUS_NEW, 'New'),
@@ -20,10 +20,10 @@ class Defect(models.Model):
     ]
 
     ########## DEFECT TYPE ATTRIBUTES ###########
-    DEFECT_TYPE_CONFIG = 'CO'
-    DEFECT_TYPE_TESTERROR = 'TE'
-    DEFECT_TYPE_UI = 'UI'
-    DEFECT_TYPE_OTHER = 'OT'
+    DEFECT_TYPE_CONFIG = 'Configuration'
+    DEFECT_TYPE_TESTERROR = 'Tester Error'
+    DEFECT_TYPE_UI = 'User Interface'
+    DEFECT_TYPE_OTHER = 'Other'
 
     DEFECT_TYPE_CHOICES = [
     (DEFECT_TYPE_CONFIG, 'Configuration'),
@@ -33,9 +33,9 @@ class Defect(models.Model):
     ]
 
     ########## DEFECT SEVERITY ATTRIBUTES ###########
-    DEFECT_SEVERITY_LOW = 'LOW'
-    DEFECT_SEVERITY_MEDIUM = 'MED'
-    DEFECT_SEVERITY_HIGH = 'HIGH'
+    DEFECT_SEVERITY_LOW = 'Low'
+    DEFECT_SEVERITY_MEDIUM = 'Medium'
+    DEFECT_SEVERITY_HIGH = 'High'
 
     DEFECT_SEVERITY_CHOICES = [
     (DEFECT_SEVERITY_LOW, 'Low'),
@@ -43,15 +43,15 @@ class Defect(models.Model):
     (DEFECT_SEVERITY_HIGH, 'High'),
     ]
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    defect_status = models.CharField(max_length=2,
+    defect_status = models.CharField(max_length=10,
                                     choices=DEFECT_STATUS_CHOICES,
                                     default=DEFECT_STATUS_NEW,
                                     )
-    defect_type = models.CharField(max_length=2,
+    defect_type = models.CharField(max_length=64,
                                     choices=DEFECT_TYPE_CHOICES,
                                     default=DEFECT_TYPE_CONFIG,
                                     )
-    severity = models.CharField(max_length=4,
+    severity = models.CharField(max_length=8,
                                 choices=DEFECT_SEVERITY_CHOICES,
                                 default='',
                                 )

@@ -1,0 +1,12 @@
+{% extends 'defect_manager_app/base.html' %}
+
+{% block content %}
+<h1>HELOO</h1>
+
+<form  method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" name="button">Add</button>
+</form>
+
+{% endblock %}

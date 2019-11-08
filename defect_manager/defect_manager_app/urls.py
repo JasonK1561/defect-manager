@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.DefectListView.as_view(), name='defect_list'),
     path('detail/<int:pk>',views.DefectDetailView.as_view(), name='defect_detail'),
     path('update/defect/<int:pk>', views.DefectUpdateView.as_view(), name='update_defect'),
+    path('comment/defect/<int:pk>', views.create_comment, name='add_comment'),
 
 ]

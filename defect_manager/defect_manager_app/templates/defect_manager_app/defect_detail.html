@@ -3,11 +3,11 @@
 <h1>Defect:{{ defect.name }}</h1>
 
 <h3>Defect Type: {{defect.defect_type}}</h3>
-<h3>Defect Type: {{defect.defect_status}}</h3>
-<h3>Defect Type: {{defect.severity}}</h3>
-<h3>Defect Type: {{defect.created_date}}</h3>
-<h3>Defect Type: {{defect.notes}}</h3>
-<h3>Defect Type: {{defect.modified_date}}</h3>
+<h3>Defect Status: {{defect.defect_status}}</h3>
+<h3>Defect Severity: {{defect.severity}}</h3>
+<h3>Defect Created Date: {{defect.created_date}}</h3>
+<h3>Defect Notes: {{defect.notes}}</h3>
+<h3>Defect Modified Date: {{defect.modified_date}}</h3>
 
 <a href="{% url 'defect_manager_app:update_defect' pk=defect.pk %}">Update</a>
 
@@ -17,6 +17,6 @@
   <br>
 {% endfor %}
 
-<!-- <a href="url 'defect_manager_app:add_comment'"></a> -->
+<a href="{% url 'defect_manager_app:add_comment' pk=defect.pk %}">Add Comment</a>
 
 {% endblock %}
