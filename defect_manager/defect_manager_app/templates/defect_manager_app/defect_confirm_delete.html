@@ -1,0 +1,9 @@
+{% extends 'defect_manager_app/base.html' %}
+{% block content %}
+<h4>Are you sure you want to delete "{{ object }}"</h4>
+<form method="post">
+  {% csrf_token %}
+<input type="submit" name="" value="confirm"/>
+</form>
+
+{% endblock %}

@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import (TemplateView,ListView,DetailView,UpdateView,
-                                    CreateView)
+                                    CreateView, DeleteView)
 from defect_manager_app.models import Defect,Comment
 from defect_manager_app.forms import DefectForm, CommentForm
+from django.urls import reverse_lazy
 # Create your views here.
 
 class DefectListView(ListView):
@@ -17,10 +18,19 @@ class DefectUpdateView(UpdateView):
     # fields = ['notes','name', 'severity', 'defect_type', 'defect_status']
     redirect_field_name = 'defect_manager_app/defect_detail.html'
 
+class DefectCreateView(CreateView):
+    model = Defect
+    fields = ['author', 'defect_type', 'severity', 'name', 'notes']
+
+class DefectDeleteView(DeleteView):
+    model = Defect
+    success_url = reverse_lazy('defect_manager_app:defect_list')
 # class CommentCreateView(CreateView):
 #     model = Comment
 #     form_class = CommentForm
-
+class ClosedDefectListView(ListView):
+    model = Defect
+    template_name = 'defect_manager_app/closed_defect_list.html'
 
 def create_comment(request, pk):
     defect = get_object_or_404(Defect, pk=pk)

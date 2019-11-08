@@ -15,7 +15,7 @@
   </tr>
 
     {% for defect in defect_list %}
-      {% if defect.defect_status != 'Closed' %}
+      {% if defect.defect_status == 'Closed' %}
       <tr>
         <td><a href="{% url 'defect_manager_app:defect_detail' pk=defect.pk%}">{{ defect.id }}</a></td>
         <td>{{ defect.name }}</td>
@@ -28,9 +28,5 @@
       </tr>
       {% endif %}
     {% endfor %}
-
-</table>
-
-
-
 {% endblock %}
+</table>
