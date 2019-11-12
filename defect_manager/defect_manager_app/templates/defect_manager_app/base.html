@@ -1,23 +1,27 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Defect Manager</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'vendor/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/css/normalize.css' %}">
   </head>
   <body>
-    <nav>
-      <ul>
+    <div class="main-nav clear-fix:after">
+      <ul class="nav-left row">
         <li><a href="{% url 'defect_manager_app:defect_list' %}">Defect Manager</a></li>
-        <li><a>About</a></li>
-        <li><a>Github</a></li>
-        <li><a>LinkedIn</a></li>
-      </ul>
-
-      <ul>
+        <li><a href="https://www.google.com/">About</a></li>
+        <li><a href="https://www.google.com/">Github</a></li>
+        <li><a href="https://www.google.com/">LinkedIn</a></li>
         <li><a href="{% url 'defect_manager_app:create_defect' %}">New Defect</a></li>
         <li><a href="{% url 'defect_manager_app:closed_defect_list' %}">Closed Defects</a></li>
       </ul>
-    </nav>
+  </div>
     {% block content %}
     {% endblock %}
 

@@ -10,7 +10,7 @@
 <h3>Defect Modified Date: {{defect.modified_date}}</h3>
 
 <a href="{% url 'defect_manager_app:update_defect' pk=defect.pk %}">Update</a>
-
+<a href="{% url 'defect_manager_app:delete_defect'%}"></a>
 {% for comment in defect.comments.all %}
   <p>{{ comment.author }}   {{ comment.created_date}}:</p>
   <p>{{ comment.text }}</p>
