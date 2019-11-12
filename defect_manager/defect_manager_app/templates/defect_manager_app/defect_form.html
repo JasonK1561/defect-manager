@@ -1,18 +1,24 @@
 {% extends 'defect_manager_app/base.html' %}
 {% block content %}
+<div class='defect-form-section row'>
+  <h1>
+    {% if not form.instance.pk %}
+      Create Defect
+    {% else %}
+      Update Defect
+    {% endif %}
 
-<h1>
-  {% if not form.instance.pk %}
-    Create Defect
-  {% else %}
-    Update Defect
-  {% endif %}
-</h1>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" name="button">Save</button>
-</form>
+  </h1>
 
+
+  <form method="post" class="defect-form">
+
+    <table class="defect-form-table">
+      {% csrf_token %}
+      {{ form.as_table }}
+    </table>
+    <button type="submit" name="button">Save</button>
+  </form>
+</div>
 
 {% endblock %}

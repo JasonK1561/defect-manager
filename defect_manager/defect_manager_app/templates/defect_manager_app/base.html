@@ -15,9 +15,9 @@
     <div class="main-nav clear-fix:after">
       <ul class="nav-left row">
         <li><a href="{% url 'defect_manager_app:defect_list' %}">Defect Manager</a></li>
-        <li><a href="https://www.google.com/">About</a></li>
-        <li><a href="https://www.google.com/">Github</a></li>
-        <li><a href="https://www.google.com/">LinkedIn</a></li>
+        <li><a href="https://www.google.com/" target="_blank">About</a></li>
+        <li><a href="https://www.google.com/" target="_blank">Github</a></li>
+        <li><a href="https://www.google.com/" target="_blank">LinkedIn</a></li>
         <li><a href="{% url 'defect_manager_app:create_defect' %}">New Defect</a></li>
         <li><a href="{% url 'defect_manager_app:closed_defect_list' %}">Closed Defects</a></li>
       </ul>
@@ -25,6 +25,6 @@
     {% block content %}
     {% endblock %}
 
-
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>

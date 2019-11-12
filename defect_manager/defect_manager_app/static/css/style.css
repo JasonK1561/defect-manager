@@ -15,7 +15,7 @@ html{
   color: black;
   font-family: 'Lato', 'Arial', 'sans-serif';
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1em;
   text-rendering: optimizeLegibility;
   background-color: #ffffff;
 }
@@ -26,9 +26,10 @@ html{
   margin: 0 auto 0 auto;
 }
 
+/*---------- Navigation ---------- */
 .main-nav{
 width: 100%;
-height: 10vh;
+height: 90px;
 background-color:#2d3436;
 }
 
@@ -41,10 +42,8 @@ text-align: center;
 .main-nav li{
   display:inline-block;
   margin-right: 2%;
-  /* text-decoration:none; */
 
 }
-
 
 .main-nav a:link,
 .main-nav a:visited{
@@ -59,4 +58,91 @@ text-align: center;
 .main-nav a:active{
   border-bottom: 3px solid #81ecec;
   transition: border 0.5s;
+}
+
+/* --------- Table ---------- */
+.defect-list-table{
+  text-align: center;
+  /* border: 3px solid #179b9b; */
+  margin-top: 2%;
+  min-width: 400px;
+  border-collapse: collapse;
+}
+
+.defect-list-table thead tr{
+  background-color: #1cb8b8;
+  color: white;
+}
+.defect-list-table th{
+  min-width:125px;
+  padding: 3px;
+}
+.defect-list-table tr{
+  border-bottom: 1px solid #e2e8ea;
+}
+.defect-list-table tr:nth-of-type(even){
+  background-color: #ecf0f1;
+  border-bottom: 1px solid #cfd9db;
+}
+
+.defect-list-table tr:last-of-type{
+  border-bottom:2px solid #1cb8b8;
+}
+.defect-list-table tr td a{
+  text-decoration: none;
+}
+.defect-list-table tr td a:link,
+.defect-list-table tr td a:visited{
+  color: blue;
+}
+
+/* ------------ ICONS ----------- */
+ion-icon{
+  font-size: 2em;
+}
+
+/*---------- Defect Detail Page -----------*/
+.defect-detail-section a{
+  border: 2px solid black;
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: 5px;
+  padding: 2px;
+  margin-right: 1%;
+
+}
+
+
+
+/* --------- Defect Form Page --------- */
+.defect-form-section{
+  text-align: center;
+  color:red;
+}
+
+.defect-form-table{
+  margin: 0 auto 0 auto;
+}
+
+.all-widgets{
+  margin-bottom:10px;
+}
+.nameinputclass{
+  width: 100%;
+
+}
+.textinputclass{
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  width: 100%;
+  height: 100px;
+  font-size: 1em;
+}
+
+.dropdownclass{
+  width: 100%;
 }

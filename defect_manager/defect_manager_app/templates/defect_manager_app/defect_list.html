@@ -2,17 +2,19 @@
 
 
 {% block content %}
-<table>
-  <tr>
-    <th>Defect Id</th>
-    <th>Defect Name</th>
-    <th>Defect Type</th>
-    <th>Defect Status</th>
-    <th>Severity</th>
-    <th>Open Date</th>
-    <th>Notes</th>
-    <th>Options</th>
-  </tr>
+<table class="defect-list-table row">
+  <thead>
+    <tr>
+      <th>Defect Id</th>
+      <th>Defect Name</th>
+      <th>Defect Type</th>
+      <th>Defect Status</th>
+      <th>Severity</th>
+      <th>Created Date</th>
+      <th>Notes</th>
+      <th>Options</th>
+    </tr>
+  </thead>
 
     {% for defect in defect_list %}
       {% if defect.defect_status != 'Closed' %}
@@ -24,7 +26,7 @@
         <td>{{ defect.severity }}</td>
         <td>{{ defect.created_date }}</td>
         <td>{{ defect.notes }}</td>
-        <td><a href="{% url 'defect_manager_app:delete_defect' pk=defect.pk %}">ICON</a</td>
+        <td><a href="{% url 'defect_manager_app:delete_defect' pk=defect.pk %}"><ion-icon name="trash"></ion-icon></a></td>
       </tr>
       {% endif %}
     {% endfor %}

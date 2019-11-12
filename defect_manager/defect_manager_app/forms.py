@@ -6,14 +6,14 @@ class DefectForm(forms.ModelForm):
     class Meta:
         model = Defect
 
-        fields = ('notes', 'name', 'severity', 'defect_type', 'defect_status')
+        fields = ('name', 'severity', 'defect_type', 'defect_status', 'notes')
 
         widgets = {
-            'notes': forms.TextInput(attrs={'class': 'textinputclass'}),
-            'name': forms.TextInput(attrs={'class': 'nameinputclass'}),
-            'severity': forms.Select(attrs={'class': 'dropdownclass'}, choices=Defect.DEFECT_SEVERITY_CHOICES),
-            'defect_type': forms.Select(attrs={'class': 'dropdownclass'}, choices=Defect.DEFECT_TYPE_CHOICES),
-            'defect_status': forms.Select(attrs={'class': 'dropdownclass'}, choices=Defect.DEFECT_STATUS_CHOICES),
+            'name': forms.TextInput(attrs={'class': 'nameinputclass all-widgets'}),
+            'notes': forms.Textarea(attrs={'class': 'textinputclass all-widgets'}),
+            'severity': forms.Select(attrs={'class': 'dropdownclass all-widgets'}, choices=Defect.DEFECT_SEVERITY_CHOICES),
+            'defect_type': forms.Select(attrs={'class': 'dropdownclass all-widgets'}, choices=Defect.DEFECT_TYPE_CHOICES),
+            'defect_status': forms.Select(attrs={'class': 'dropdownclass all-widgets'}, choices=Defect.DEFECT_STATUS_CHOICES),
         }
 
 
