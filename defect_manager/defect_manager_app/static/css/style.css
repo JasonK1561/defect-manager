@@ -56,7 +56,7 @@ text-align: center;
 
 .main-nav a:hover,
 .main-nav a:active{
-  border-bottom: 3px solid #81ecec;
+  border-bottom: 3px solid #1cb8b8;
   transition: border 0.5s;
 }
 
@@ -102,6 +102,10 @@ ion-icon{
 }
 
 /*---------- Defect Detail Page -----------*/
+.defect-detail-section{
+  text-align:center;
+  font-size: 1em;
+}
 .defect-detail-section a{
   border: 2px solid black;
   text-decoration: none;
@@ -109,15 +113,49 @@ ion-icon{
   border-radius: 5px;
   padding: 2px;
   margin-right: 1%;
-
+  background-color: #1cb8b8;
+  border: none;
+  color: white;
+  padding: .5em 1em;
 }
 
+.update-delete-btn{
+  margin-top: 30px;
+}
 
+/* Comment Section */
+.comment-section{
+  font-size: 1.25em;
+  border: 2px solid black;
+  width: 50%;
+  margin-left: 5%;
+  margin-top: 10vh;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.comment-btn-div{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: 5%;
+}
+
+.comment-btn-div a{
+  border: 2px solid black;
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: 5px;
+  padding: 2px;
+  margin-right: 1%;
+  background-color: #1cb8b8;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+}
 
 /* --------- Defect Form Page --------- */
 .defect-form-section{
   text-align: center;
-  color:red;
 }
 
 .defect-form-table{
@@ -128,7 +166,7 @@ ion-icon{
   margin-bottom:10px;
 }
 .nameinputclass{
-  width: 100%;
+  width: 95%;
 
 }
 .textinputclass{
@@ -138,11 +176,27 @@ ion-icon{
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  width: 100%;
+  width: 95%;
   height: 100px;
   font-size: 1em;
 }
 
 .dropdownclass{
-  width: 100%;
+  width: 95%;
+}
+
+.btn-primary{
+  background-color: #1cb8b8;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  font-size: 1.5em;
+}
+
+
+/* --------- Confirm Delete Page --------- */
+.delete-section{
+  text-align:center;
+  margin-top: 2em;
+  font-size: 1.5em;
 }

@@ -1,23 +1,42 @@
 {% extends 'defect_manager_app/base.html' %}
 {% block content %}
-<div class="defect-detail-section">
-  <h1>Defect:{{ defect.name }}</h1>
+<div class="defect-detail-section row">
+  <div class="defect-details">
+    <h1>Defect:{{ defect.name }}</h1>
 
-  <h3>Defect Type: {{defect.defect_type}}</h3>
-  <h3>Defect Status: {{defect.defect_status}}</h3>
-  <h3>Defect Severity: {{defect.severity}}</h3>
-  <h3>Defect Created Date: {{defect.created_date}}</h3>
-  <h3>Defect Notes: {{defect.notes}}</h3>
-  <h3>Defect Modified Date: {{defect.modified_date}}</h3>
+    <h3>Defect Type: {{defect.defect_type}}</h3>
+    <h3>Defect Status: {{defect.defect_status}}</h3>
+    <h3>Defect Severity: {{defect.severity}}</h3>
+    <h3>Defect Created Date: {{defect.created_date}}</h3>
+    <h3>Defect Notes: {{defect.notes}}</h3>
+    <h3>Defect Modified Date: {{defect.modified_date}}</h3>
+  </div>
 
-  <a href="{% url 'defect_manager_app:update_defect' pk=defect.pk %}">Update</a>
-  <a href="{% url 'defect_manager_app:delete_defect' pk=defect.pk%}">Delete</a>
-  {% for comment in defect.comments.all %}
-    <p>{{ comment.author }}   {{ comment.created_date}}:</p>
-    <p>{{ comment.text }}</p>
-    <br>
-  {% endfor %}
 
-  <a href="{% url 'defect_manager_app:add_comment' pk=defect.pk %}">Add Comment</a>
+  <div class="update-delete-btn">
+  <a class = "defect-btn" href="{% url 'defect_manager_app:update_defect' pk=defect.pk %}">
+    Update</a>
+  <a class = "defect-btn" href="{% url 'defect_manager_app:delete_defect' pk=defect.pk%}">
+    Delete</a>
+  </div>
+
 </div>
+<div class="comment-section">
+      {% for comment in defect.comments.all %}
+        <p>{{ comment.author }}:</p>
+        {{ comment.created_date}}
+        <br>
+        <p>{{ comment.text }}</p>
+        <br>
+        <br>
+      {% endfor %}
+
+</div>
+<div class="comment-btn-div">
+  <a class='comment-btn'href="{% url 'defect_manager_app:add_comment' pk=defect.pk %}">Add Comment</a>
+</div>
+<div class="">
+
+</div>
+
 {% endblock %}

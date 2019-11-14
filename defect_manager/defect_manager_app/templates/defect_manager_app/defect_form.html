@@ -4,6 +4,7 @@
   <h1>
     {% if not form.instance.pk %}
       Create Defect
+
     {% else %}
       Update Defect
     {% endif %}
@@ -11,13 +12,13 @@
   </h1>
 
 
-  <form method="post" class="defect-form">
+  <form method="POST" class="defect-form">
 
     <table class="defect-form-table">
       {% csrf_token %}
-      {{ form.as_table }}
+      {{ form.as_table}}
     </table>
-    <button type="submit" name="button">Save</button>
+    <button type="submit" class='btn-primary' name="button">Save</button>
   </form>
 </div>
 

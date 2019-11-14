@@ -20,7 +20,8 @@ class DefectUpdateView(UpdateView):
 
 class DefectCreateView(CreateView):
     model = Defect
-    fields = ['author', 'defect_type', 'severity', 'name', 'notes']
+    form_class = DefectForm
+
 
 class DefectDeleteView(DeleteView):
     model = Defect

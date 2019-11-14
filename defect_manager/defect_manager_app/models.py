@@ -42,7 +42,7 @@ class Defect(models.Model):
     (DEFECT_SEVERITY_MEDIUM, 'Medium'),
     (DEFECT_SEVERITY_HIGH, 'High'),
     ]
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    author = models.CharField(max_length=256)
     defect_status = models.CharField(max_length=10,
                                     choices=DEFECT_STATUS_CHOICES,
                                     default=DEFECT_STATUS_NEW,
