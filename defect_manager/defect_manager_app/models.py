@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.urls import reverse
 
 # Create your models here.
+
 class Defect(models.Model):
     ########## DEFECT STATUS ATTRIBUTES ###########
     DEFECT_STATUS_NEW = 'New'

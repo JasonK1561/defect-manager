@@ -4,9 +4,11 @@ from django.views.generic import (TemplateView,ListView,DetailView,UpdateView,
 from defect_manager_app.models import Defect,Comment
 from defect_manager_app.forms import DefectForm, CommentForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
-class DefectListView(ListView):
+class DefectListView(LoginRequiredMixin, ListView):
+    login_url = 'accounts/login/'
     model = Defect
 
 class DefectDetailView(DetailView):
