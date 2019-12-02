@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from defect_manager_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('defect_manager_app.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('signup/', views.SignUp.as_view(), name='signup'),
 ]

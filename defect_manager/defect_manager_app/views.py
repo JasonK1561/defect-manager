@@ -5,33 +5,38 @@ from defect_manager_app.models import Defect,Comment
 from defect_manager_app.forms import DefectForm, CommentForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from . import forms
 # Create your views here.
+class SignUp(CreateView):
+    form_class = forms.UserCreateForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
 
 class DefectListView(LoginRequiredMixin, ListView):
     login_url = 'accounts/login/'
     model = Defect
 
-class DefectDetailView(DetailView):
+class DefectDetailView(LoginRequiredMixin, DetailView):
     model = Defect
 
-class DefectUpdateView(UpdateView):
+class DefectUpdateView(LoginRequiredMixin, UpdateView):
     model = Defect
     form_class = DefectForm
     # fields = ['notes','name', 'severity', 'defect_type', 'defect_status']
     redirect_field_name = 'defect_manager_app/defect_detail.html'
 
-class DefectCreateView(CreateView):
+class DefectCreateView(LoginRequiredMixin, CreateView):
     model = Defect
     form_class = DefectForm
 
 
-class DefectDeleteView(DeleteView):
+class DefectDeleteView(LoginRequiredMixin, DeleteView):
     model = Defect
     success_url = reverse_lazy('defect_manager_app:defect_list')
 # class CommentCreateView(CreateView):
 #     model = Comment
 #     form_class = CommentForm
-class ClosedDefectListView(ListView):
+class ClosedDefectListView(LoginRequiredMixin, ListView):
     model = Defect
     template_name = 'defect_manager_app/closed_defect_list.html'
 
