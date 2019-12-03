@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from defect_manager_app import views
+from django.contrib.auth.views import LoginView, LogoutView
+from defect_manager_app.forms import LoginForm
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('defect_manager_app.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', LoginView.as_view(form_class=LoginForm), name='login'),
+    path('accounts/logout/', LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
     path('signup/', views.SignUp.as_view(), name='signup'),
 ]

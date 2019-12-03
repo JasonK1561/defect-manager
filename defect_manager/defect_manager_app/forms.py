@@ -1,5 +1,9 @@
 from django import forms
 from defect_manager_app.models import Defect, Comment
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
+
 
 class DefectForm(forms.ModelForm):
 
@@ -30,8 +34,11 @@ class CommentForm(forms.ModelForm):
             'text': forms.TextInput(attrs={'class': 'textinputclass'})
         }
 
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+
+
+class LoginForm(AuthenticationForm):
+    username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
 
 class UserCreateForm(UserCreationForm):

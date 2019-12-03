@@ -2,9 +2,19 @@
 {% extends 'registration/registration_base.html' %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-<button type="submit">Login</button>
-</form>
+
+<div class="container">
+  <h1>Login</h1>
+  <div class="jumbotron">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class='btn btn-primary'>Login</button>
+    <a class='btn btn-secondary' href="{% url 'signup' %}">Sign Up</a>
+    </form>
+
+  </div>
+
+</div>
+
 {% endblock %}

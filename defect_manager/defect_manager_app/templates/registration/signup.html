@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'registration/registration_base.html' %}
 
+{% block content %}
     <div class="container">
         <h1>Sign Up</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Sign Up" class="btn btn-default">
-        </form>
+        <div class="jumbotron">
+          <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input class='btn btn-primary' type="submit" value="Sign Up" class="btn btn-default">
+          </form>
+        </div>
     </div>
-
-
-  </body>
-</html>
+{% endblock %}
