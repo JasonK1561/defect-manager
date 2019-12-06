@@ -3,18 +3,29 @@
 
 {% block content %}
 
-<div class="container">
+<body>
+
+
+<div class="login-container">
+  <ion-icon class='login-icon' name="contact"></ion-icon>
   <h1>Login</h1>
-  <div class="jumbotron">
     <form method="post">
         {% csrf_token %}
+        <!-- {{ form.non_field_errors }}
+     <div class="fieldWrapper">
+         {{ form.username.errors }}
+         <label for="{{ form.username.id_for_label }}">Username:</label>
+         {{ form.username }}
+     </div>
+     <div class="fieldWrapper">
+        <!-- {{ form.password.errors }} -->
+        <!-- <label for="{{ form.password.id_for_label }}">Password:</label>
+        {{ form.password }}
+    </div> -->
         {{ form.as_p }}
     <button type="submit" class='btn btn-primary'>Login</button>
     <a class='btn btn-secondary' href="{% url 'signup' %}">Sign Up</a>
     </form>
-
-  </div>
-
 </div>
-
+</body>
 {% endblock %}

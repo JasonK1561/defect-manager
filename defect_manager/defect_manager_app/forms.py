@@ -37,8 +37,8 @@ class CommentForm(forms.ModelForm):
 
 
 class LoginForm(AuthenticationForm):
-    username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    username=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'class':'id-input', 'placeholder': 'Username'}),label='')
+    password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'class': 'pw-input', 'placeholder': 'Password'}),label='')
 
 
 class UserCreateForm(UserCreationForm):

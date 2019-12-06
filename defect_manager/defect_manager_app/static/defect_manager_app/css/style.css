@@ -200,3 +200,9 @@ ion-icon{
   margin-top: 2em;
   font-size: 1.5em;
 }
+
+
+/* ---------------------------- Login Page --------------------------------*/
+.fieldWrapper{
+  margin-top: 800px;
+}

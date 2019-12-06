@@ -5,13 +5,12 @@ from django.contrib import auth
 # Create your models here.
 
 class User(auth.models.User, auth.models.PermissionsMixin):
-    """User Model that is inherited from djangos pre built user model"""
+
     def __str__(self):
         return "@{}".format(self.username)
 
 
 class Defect(models.Model):
-    """Defect Model"""
     ########## DEFECT STATUS ATTRIBUTES ###########
     DEFECT_STATUS_NEW = 'New'
     DEFECT_STATUS_OPEN = 'Open'
@@ -74,7 +73,8 @@ class Defect(models.Model):
 
     def modified(self):
         self.modified_date = timezone.now()
-        self.save()
+        # self.save()
+
 
     def __str__(self):
         return self.name
@@ -82,7 +82,7 @@ class Defect(models.Model):
 
 # class Comments
 class Comment(models.Model):
-    """Comment Model"""
+
     defect = models.ForeignKey('defect_manager_app.Defect', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()

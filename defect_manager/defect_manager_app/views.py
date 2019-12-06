@@ -8,49 +8,40 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from . import forms
 # Create your views here.
 class SignUp(CreateView):
-    """View for user sign up"""
     form_class = forms.UserCreateForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 
 class DefectListView(LoginRequiredMixin, ListView):
-    """List of defect view"""
     login_url = 'accounts/login/'
     model = Defect
 
 class DefectDetailView(LoginRequiredMixin, DetailView):
-    """Defect detail view of an instance of a defect"""
     model = Defect
 
-class DefectUpdateView(LoginRequiredMixin, UpdateView):
-    """Form view for a defect instance for updating"""
-    model = Defect
-    form_class = DefectForm
-    # fields = ['notes','name', 'severity', 'defect_type', 'defect_status']
-    redirect_field_name = 'defect_manager_app/defect_detail.html'
+# class DefectUpdateView(LoginRequiredMixin, UpdateView):
+#     model = Defect
+#     form_class = DefectForm
+#     # fields = ['notes','name', 'severity', 'defect_type', 'defect_status']
+#
+#     redirect_field_name = 'defect_manager_app/defect_list.html'
 
 class DefectCreateView(LoginRequiredMixin, CreateView):
-    """Form view for creating a defect instance"""
     model = Defect
     form_class = DefectForm
 
 
 class DefectDeleteView(LoginRequiredMixin, DeleteView):
-    """Deleting a defect instance"""
     model = Defect
     success_url = reverse_lazy('defect_manager_app:defect_list')
-
-#Initially tried to create a create view for creating a comment
 # class CommentCreateView(CreateView):
 #     model = Comment
 #     form_class = CommentForm
 class ClosedDefectListView(LoginRequiredMixin, ListView):
-    """View for list of closed defects"""
     model = Defect
     template_name = 'defect_manager_app/closed_defect_list.html'
 
 def create_comment(request, pk):
-    """Function view for creating a comment on a defect instance"""
     defect = get_object_or_404(Defect, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -63,3 +54,17 @@ def create_comment(request, pk):
         form = CommentForm()
 
     return render(request, 'defect_manager_app/comment_form.html', {'form':form})
+
+
+def update_defect(request, pk):
+    defect = get_object_or_404(Defect, pk=pk)
+    if request.method == "POST":
+        form = DefectForm(request.POST, instance=defect)
+        # defect = form.save(commit=False)
+        defect.modified()
+        form.save()
+        return redirect('defect_manager_app:defect_detail', pk=defect.pk)
+    else:
+        form = DefectForm(instance=defect)
+
+    return render(request, 'defect_manager_app/defect_form.html', {'form':form})
