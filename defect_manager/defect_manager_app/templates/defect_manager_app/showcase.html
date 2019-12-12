@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Omnifood</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'defect_manager_app/css/style_showcase.css' %}">
+    <link rel="stylesheet" href="{% static 'defect_manager_app/vendor/css/grid.css' %}">
+    <link rel="stylesheet" href="{% static 'defect_manager_app/vendor/css/normalize.css' %}">
+  </head>
+
+  <body>
+    <section class="hero-section">
+      <div class="main-nav row">
+        <a class='brand-logo' href="#"><img src="{% static 'defect_manager_app/img/logo-white.png' %}" alt=""></a>
+        <ul>
+          <li><a href="#">DESSERT SERVICE</a></li>
+          <li><a href="#">HOW IT WORKS</a></li>
+          <li><a href="#">LOCATIONS</a></li>
+          <li><a href="#">SIGN UP</a></li>
+          <li><a href="{% url 'defect_manager_app:defect_list' %}">DEFECT MANAGER</a></li>
+        </ul>
+      </div>
+      <div class="hero-text row clearfix::after">
+        <h1>Want Dessert?<br>Delicious Delivered Dessert Now!</h1>
+        <a href="#" class="hero-primary-btn">Business Time</a>
+        <a href="#" class="hero-secondary-btn">Learn more</a>
+      </div>
+    </section>
+
+
+    <section class="why-us-section">
+      <div class="why-us row">
+        <div class="why-us-header row">
+          <h2>DELIVERED DELICIOUS DESSERT &mdash; ALWAYS DELISH</h2>
+          <h3>&mdash;</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          </p>
+        </div>
+
+        <div class="why-us-explaination">
+          <div class="why-us-parts why-us-days col span-1-of-4">
+            <ion-icon name="calendar"></ion-icon>
+            <h4>UP TO 365 DAYS/YEAR</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            </p>
+          </div>
+          <div class="why-us-parts why-us-minutes col span-1-of-4">
+            <ion-icon name="alarm"></ion-icon>
+            <h4>READY IN 20 MINUTES</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            </p>
+          </div>
+          <div class="why-us-parts why-us-organic col span-1-of-4">
+            <ion-icon name="heart"></ion-icon>
+            <h4>100% ORGANIC</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            </p>
+          </div>
+          <div class="why-us-parts why-us-order col span-1-of-4">
+            <ion-icon name="wine"></ion-icon>
+            <h4>ORDER ANYTHING</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class='gallery-section'>
+      <div class="gallery">
+        <table>
+          <tr>
+            <td><img src="{% static 'defect_manager_app/img/1.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/2.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/3.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/4.jpg' %}" alt=""></td>
+          </tr>
+          <tr>
+            <td><img src="{% static 'defect_manager_app/img/5.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/6.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/7.jpg' %}" alt=""></td>
+            <td><img src="{% static 'defect_manager_app/img/8.jpg' %}" alt=""></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class='how-it-works-section'>
+      <div class="why-us-header row">
+        <h2>HOW IT WORKS &mdash; SIMPLE AS 1, 2, 3</h2>
+        <h3>&mdash;</h3>
+      </div>
+
+      <div class="phone-steps">
+        <div class="phone-part span-1-of-2 col">
+          <img src="{% static 'defect_manager_app/img/app-iPhone.png' %}" alt="">
+        </div>
+
+        <div class="steps-part span-1-of-2 col">
+          <div class="step">
+            <div class="one-two-three">
+                <h5>1</h5>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="step">
+            <div class="one-two-three">
+                <h5>2</h5>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="step">
+            <div class="one-two-three">
+                <h5>3</h5>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+
+            <!-- <img src="img/download-app-android.png" alt=""> -->
+
+        </div>
+      </div>
+    </section>
+
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+  </body>
+</html>

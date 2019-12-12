@@ -11,5 +11,5 @@ urlpatterns = [
     path('comment/defect/<int:pk>', views.create_comment, name='add_comment'),
     path('create/defect', views.DefectCreateView.as_view(), name='create_defect'),
     path('delete/defect/<int:pk>', views.DefectDeleteView.as_view(),name='delete_defect'),
-    path('closed/', views.ClosedDefectListView.as_view(), name='closed_defect_list'),
+    path('closed/', views.ClosedDefectListView.as_view(), name='closed_defect_list')
 ]

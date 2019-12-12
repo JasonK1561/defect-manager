@@ -1,0 +1,216 @@
+/* --------------------------------- BASIC SETUP ------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  color: #000000;
+  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-weight: 300px;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* ----------------------------- RE-USABLE ----------------------------------*/
+
+.row{
+  max-width: 1140px;
+  margin: 0 auto 0 auto;
+}
+
+/*Header for multiple sections*/
+.why-us-header h2, h3{
+  color: black;
+  text-align: center;
+  font-weight: 400;
+}
+.why-us-header h3{
+  color: var(--theme-color);
+  font-size: 50px;
+  font-weight: 50;
+}
+.why-us-header p{
+  text-align: center;
+  margin: 0 auto;
+  max-width:80%;
+}
+
+:root {
+  --generic-text-color: #ffffff;
+  --theme-color: #27a944;
+}
+/* ------------------------------------ Body ---------------------------------- */
+/* Navigation */
+
+
+.main-nav{
+  position: relative;
+  text-align: right;
+}
+.main-nav img{
+  height: 100px;
+  margin-top: 3%;
+  float:left;
+  color: var(--generic-text-color);
+}
+.main-nav li{
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 3%;
+  margin-top: 6%;
+}
+.main-nav a{
+  text-decoration: none;
+  color: var(--generic-text-color);
+  font-size: 90%;
+}
+/* Hero Section */
+.hero-section{
+  background-image: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),url("img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+
+.hero-text{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color: var(--generic-text-color);
+}
+
+.hero-text a:link,
+.hero-text a:visited{
+  text-decoration: none;
+  margin-right:2%;
+  padding: 8px;
+  border: 1px solid var(--theme-color);
+  border-radius: 15px;
+  color:var(--generic-text-color);
+}
+
+.hero-primary-btn,
+.hero-primary-btn{
+  background-color:#41d361;
+}
+
+.hero-primary-btn:active,
+.hero-primary-btn:hover{
+  background-color: var(--theme-color);
+  transition: background-color .2s ease;
+}
+
+.hero-secondary-btn:active,
+.hero-secondary-btn:hover{
+  background-color: var(--theme-color);
+  transition: background-color .2s ease;
+}
+
+/* ---------------------------- why-us-section ------------------------------- */
+.why-us{
+  margin-bottom: 80px;
+  margin-top: 2%;
+
+}
+
+
+.why-us-explaination{
+  margin-top: 30px;
+}
+.why-us-explaination h4{
+  text-align: left;
+}
+
+.why-us-parts p{
+  margin-top:15px;
+}
+ion-icon{
+  color: var(--theme-color);
+  font-size: 50px;
+}
+
+/* ------------------------------- GALLERY SECTION -----------------------------*/
+.gallery{
+  margin-bottom:70px;
+}
+.gallery table{
+  border-collapse:collapse;
+  width: 100%;
+
+}
+.gallery table td{
+  border:none;
+  background-color:black;
+  overflow:hidden;
+  /* width:25%; */
+}
+.gallery table img{
+  width:100%;
+  max-height: 100%;
+  display: block;
+  opacity: 0.5;
+  transition: .2s ease-in-out;
+
+}
+
+.gallery table img:hover{
+  opacity:1;
+  transform: scale(1.1,1.1);
+}
+
+
+/* --------------------------- HOW IT WORKS SECTION -----------------------*/
+.how-it-works-section{
+  margin-bottom: 500px;
+}
+
+.phone-part{
+  /* border: 1px solid black; */
+  /* max-width: 300px; */
+}
+.phone-steps img{
+  width: 200px;
+  float:right;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.steps-part h5{
+  /* display: inline-block; */
+}
+
+.step{
+  display: inline-block;
+  width: 60%;
+}
+
+.step h5{
+  font-size: 1.5em;
+  color: var(--theme-color);
+  border: 3px solid var(--theme-color);
+  padding: 10px 20px;
+  border-radius: 60%;
+  float:left;
+}
+
+.step p{
+  /* position: relative; */
+  /* display: inline-block; */
+  max-width: 80%;
+  margin-bottom: 40px;
+  float: right;
+}
+
+/* --- Play store --- */
+.app-store img{
+}

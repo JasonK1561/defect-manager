@@ -25,4 +25,5 @@ urlpatterns = [
     path('accounts/login/', LoginView.as_view(form_class=LoginForm), name='login'),
     path('accounts/logout/', LogoutView.as_view(), name='logout', kwargs={'next_page': '/'}),
     path('signup/', views.SignUp.as_view(), name='signup'),
+    path('dessert/',views.DessertTemplateView.as_view(), name='dessert'),
 ]

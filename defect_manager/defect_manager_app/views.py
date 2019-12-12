@@ -41,6 +41,9 @@ class ClosedDefectListView(LoginRequiredMixin, ListView):
     model = Defect
     template_name = 'defect_manager_app/closed_defect_list.html'
 
+class DessertTemplateView(TemplateView):
+    template_name = 'defect_manager_app/showcase.html'
+
 def create_comment(request, pk):
     defect = get_object_or_404(Defect, pk=pk)
     if request.method == "POST":
